@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+    <title>emf_app </title>
+    <script type="text/javascript" src="{{url_for ('static', filename = "js/jquery-3.2.1.min.js")}}">
+    $(document).ready(function () {
+        $("fa-times").click(function(){
+            $(".sidebar_menu").addClass("hide_menu")
+            $(".toggle_menu").addClass("opacity_one")
+        });
+
+        $(".toggle_menu").click(function(){
+            $(".sidebar_menu").removeClass("hide_menu")
+            $(".toggle_menu").removeClass("opacity_one")
+        });
+    });
+    </script>
+    <link rel="stylesheet" type="text/css" href="{{url_for ('static', filename = "css/font-awesome.min.css")}}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <style>
+
+    #wrapper{
+        background-image : url('http://www.rudebaguette.com/assets/crowdfunding.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #main{
+        text-align: center;
+        padding-top: 350px;
+    }
+    .toggle_menu{
+        position: fixed;
+        padding: 15px 15px 20px 15px;
+        margin-top: 70px;
+        color : white;
+        cursor: pointer;
+        background-color: #648B79;
+        z-index: 1000000;
+        font-size: 2em;
+    }
+    .sidebar_menu{
+        position: fixed;
+        width: 250px;
+        margin-left: 0px;
+        overflow: hidden;
+        height: 100vh;
+        max-height: 100vh;
+        background-color: rgba(17, 15, 17, 0.9);
+        opacity: 0.9;
+        transition: all 0.3s ease-in-out;
+    }
+    .fa-times{
+        right: 10px;
+        top: 10px;
+        opacity: 0.7;
+        cursor: pointer;
+        position: absolute;
+        color: white;
+        transition: all 0.3s ease-in-out;
+    }
+    .fa-times:hover{
+        opacity: 1;
+    }
+    .boxed-item{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 200;
+        padding: 10px 20px;
+        display: inline-block;
+        border: solid 2px white;
+        box-sizing: border-box;
+        font-size: 22px;
+        color: white;
+        text-align: center;
+        margin-top: 70px;
+    }
+    .logo_bold{
+        font-weight: 800;
+    }
+    .navigation_selection{
+        margin: 20px 0;
+        display: block;
+        width: 200px;
+        margin-left: 25px;
+        list-style-type: none;
+    }
+    .navigation_item{
+        font-weight: 200;
+        font-family: 'Open Sans', sans-serif;
+        font-style: bold;
+        padding: 12px 0;
+        box-sizing: border-box;
+        font-size: 14px;
+        color: white;
+        border-bottom: solid 1px #D8D8D8;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+    }
+    .navigation_item:hover{
+        border-bottom:  2px solid #3848CC;
+    }
+    .container{
+        text-align: center;
+        padding-top: 100px;
+    }
+    .hide_menu{
+        margin-left: -250px;
+    }
+    .opacity_one{
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+    }
+
+    </style>
+</head>
+<body id ="wrapper">
+    <i class="fa fa-bars toggle_menu"></i>
+
+    <div class="sidebar_menu">
+    <i class="fa fa-times"></i>
+        <center>
+            <a href="#"><h2 class="boxed-item" > LV <span class="logo_bold" > EMF </span></h2></a>
+        </center>
+
+    <ul class="navigation_selection">
+        <li class="navigation_item"> Home </li>
+        <li class="navigation_item"> Documentation </li>
+        <li class="navigation_item"> About </li>
+        <li class="navigation_item"> Profile </li>
+        <li class="navigation_item"> Sign Out </li>
+    </ul>
+    </div>
+
+    <div class ="container">
+        <h1> WELCOME TO THIS WEBSITE</h1>
+        <button class="btn btn-success btn-lg"> Sign up to continue </button>
+    </div>
+
+
+</body>
+</html>
